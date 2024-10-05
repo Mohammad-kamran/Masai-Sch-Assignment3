@@ -1,30 +1,37 @@
-// Function to change button color when clicked
+// Function to change button color on click
 function changeColor(event) {
     event.target.style.backgroundColor = 'lightblue';
 }
 
-// Function to display the message when mouse is over the button
+// Function to show message on mouseover
 function showMessage(event) {
-    const messageId = `message${event.target.id.charAt(event.target.id.length - 1)}`;
+    const messageId = event.target.getAttribute('data-message');
     document.getElementById(messageId).style.display = 'block';
 }
 
-// Function to hide the message when mouse is out of the button
+// Function to hide message on mouseout
 function hideMessage(event) {
-    const messageId = `message${event.target.id.charAt(event.target.id.length - 1)}`;
+    const messageId = event.target.getAttribute('data-message');
     document.getElementById(messageId).style.display = 'none';
 }
 
-// Function to hide the button when double-clicked
+// Function to hide the button on double click
 function hideButton(event) {
     event.target.style.display = 'none';
 }
 
-// Add event listeners to the buttons for the specified events
-const buttons = document.querySelectorAll('.button');
-buttons.forEach(button => {
-    button.addEventListener('click', changeColor);       // Click event to change color
-    button.addEventListener('mouseover', showMessage);   // Mouseover event to show message
-    button.addEventListener('mouseout', hideMessage);    // Mouseout event to hide message
-    button.addEventListener('dblclick', hideButton);     // Double-click event to hide button
-});
+// Add event listeners to each button
+document.getElementById('button1').addEventListener('click', changeColor);
+document.getElementById('button1').addEventListener('mouseover', showMessage);
+document.getElementById('button1').addEventListener('mouseout', hideMessage);
+document.getElementById('button1').addEventListener('dblclick', hideButton);
+
+document.getElementById('button2').addEventListener('click', changeColor);
+document.getElementById('button2').addEventListener('mouseover', showMessage);
+document.getElementById('button2').addEventListener('mouseout', hideMessage);
+document.getElementById('button2').addEventListener('dblclick', hideButton);
+
+document.getElementById('button3').addEventListener('click', changeColor);
+document.getElementById('button3').addEventListener('mouseover', showMessage);
+document.getElementById('button3').addEventListener('mouseout', hideMessage);
+document.getElementById('button3').addEventListener('dblclick', hideButton);
